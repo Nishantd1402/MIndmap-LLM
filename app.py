@@ -162,7 +162,7 @@ if chapter:
                     create_markdown_file(pre_written_text, output, file_name)
 
                     # Convert markdown to HTML using markmap
-                    command = f'npx markmap-cli {file_name} --no-open -o {html_file}'
+                    command = f'npm install npx \n npx markmap-cli {file_name} --no-open -o {html_file}'
                     subprocess.run(command, shell=True)
 
                     # Read the generated HTML file
