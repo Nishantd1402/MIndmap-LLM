@@ -135,7 +135,7 @@ chapter = st.selectbox("Enter chapter number:", chapter_name.keys(), key=1, inde
 
 if chapter:
     # Select verses number
-    verses = st.multiselect("Enter verses number:", chapter_verse_dict[chapter_name[chapter]], key=2)
+    verses = st.selectbox("Enter verses number:", chapter_verse_dict[chapter_name[chapter]], key=2, index=None, placeholder="Select verse number...")
     chapter = chapter_name[chapter]
 
     if chapter and verses:
