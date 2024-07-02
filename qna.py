@@ -135,7 +135,7 @@ chapter = st.selectbox("Enter chapter number:", chapter_name.keys(), key=1, inde
 
 if chapter:
     # Select verses number
-    verses = st.selectbox("Enter verses number:", chapter_verse_dict[chapter_name[chapter]], key=2, index=None, placeholder="Select verse number...")
+    verses = st.multiselect("Enter verses number:", chapter_verse_dict[chapter_name[chapter]], key=2)
     chapter = chapter_name[chapter]
 
     if chapter and verses !=0:
@@ -159,7 +159,9 @@ if chapter:
                         model="llama3-70b-8192",
                         temperature=0.1
                     )
-                    output = chat_completion.choices[0].message.content
 
-                    # Display output
-                    st.markdown(output)
+                    if input_text:
+                        output = chat_completion.choices[0].message.content
+
+                        # Display output
+                        st.markdown(output)
