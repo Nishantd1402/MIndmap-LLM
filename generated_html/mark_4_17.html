@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Mind Map","children":[{"content":"Liberation from Material Bondage","children":[{"content":"Understanding Action","children":[{"content":"Action","children":[{"content":"Distinctions from Inaction and Unauthorized Actions","children":[],"payload":{"lines":"13,14"}}],"payload":{"lines":"12,13"}},{"content":"Inaction","children":[{"content":"Distinctions from Action and Unauthorized Actions","children":[],"payload":{"lines":"15,16"}}],"payload":{"lines":"14,15"}},{"content":"Unauthorized Actions","children":[{"content":"Distinctions from Action and Inaction","children":[],"payload":{"lines":"17,18"}}],"payload":{"lines":"16,17"}}],"payload":{"lines":"11,12"}},{"content":"Analysis of Action","children":[{"content":"Reaction","children":[{"content":"Consequences of Action","children":[],"payload":{"lines":"20,21"}}],"payload":{"lines":"19,20"}},{"content":"Perverted Actions","children":[{"content":"Vikarmas or Prohibitive Actions","children":[],"payload":{"lines":"22,23"}}],"payload":{"lines":"21,22"}}],"payload":{"lines":"18,19"}},{"content":"Kṛṣṇa Consciousness","children":[{"content":"Understanding Relationship with the Supreme","children":[{"content":"Eternal Servitor of the Lord","children":[],"payload":{"lines":"25,26"}}],"payload":{"lines":"24,25"}},{"content":"Acting in Kṛṣṇa Consciousness","children":[{"content":"According to the Modes","children":[],"payload":{"lines":"27,28"}}],"payload":{"lines":"26,27"}}],"payload":{"lines":"23,24"}},{"content":"Bhagavad-gītā","children":[{"content":"Direction","children":[{"content":"Toward Kṛṣṇa Consciousness","children":[],"payload":{"lines":"30,31"}}],"payload":{"lines":"29,30"}}],"payload":{"lines":"28,29"}},{"content":"Association with Authorities","children":[{"content":"Learning from Authorities","children":[{"content":"Learning from the Lord Directly","children":[],"payload":{"lines":"33,34"}}],"payload":{"lines":"32,33"}}],"payload":{"lines":"31,32"}},{"content":"Importance of Guidance","children":[{"content":"Even the Most Intelligent Person","children":[{"content":"Will be Bewildered without Guidance","children":[],"payload":{"lines":"36,37"}}],"payload":{"lines":"35,36"}}],"payload":{"lines":"34,35"}}],"payload":{"lines":"10,11"}}],"payload":{"lines":"9,10"}},null)</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Mind Map","children":[{"content":"Estimation of Comparative Strength","children":[{"content":"Duryodhana's Perspective","children":[{"content":"Strength of Armed Forces","children":[{"content":"Immeasurable","children":[],"payload":{"lines":"13,14"}},{"content":"Protected by Grandfather Bhīṣma","children":[{"content":"Most Experienced General","children":[],"payload":{"lines":"15,16"}}],"payload":{"lines":"14,15"}}],"payload":{"lines":"12,13"}}],"payload":{"lines":"11,12"}},{"content":"Weakness of Pāṇḍavas' Forces","children":[{"content":"Limited Strength","children":[{"content":"Protected by Bhīma","children":[{"content":"Less Experienced General","children":[],"payload":{"lines":"19,20"}},{"content":"Compared to Bhīṣma","children":[],"payload":{"lines":"20,21"}}],"payload":{"lines":"18,19"}}],"payload":{"lines":"17,18"}}],"payload":{"lines":"16,17"}},{"content":"Duryodhana's Envy","children":[{"content":"Towards Bhīma","children":[{"content":"Knew Bhīma could Kill Him","children":[],"payload":{"lines":"24,25"}}],"payload":{"lines":"23,24"}}],"payload":{"lines":"22,23"}},{"content":"Confidence in Victory","children":[{"content":"Due to Bhīṣma's Presence","children":[{"content":"Far Superior General","children":[],"payload":{"lines":"27,28"}}],"payload":{"lines":"26,27"}}],"payload":{"lines":"25,26"}},{"content":"Conclusion","children":[{"content":"Duryodhana's Victory","children":[{"content":"Well Ascertained","children":[],"payload":{"lines":"30,31"}}],"payload":{"lines":"29,30"}}],"payload":{"lines":"28,29"}}],"payload":{"lines":"10,11"}}],"payload":{"lines":"9,10"}},null)</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Mind Map","children":[{"content":"Demigods","children":[{"content":"Authorized Agents","children":[{"content":"Supplying Agents on behalf of the Supreme Personality of Godhead, Viṣṇu","children":[],"payload":{"lines":"12,13"}}],"payload":{"lines":"11,12"}},{"content":"Purpose","children":[{"content":"Satisfied by the Performance of Prescribed Yajñas","children":[],"payload":{"lines":"14,15"}}],"payload":{"lines":"13,14"}},{"content":"Types of Yajñas","children":[{"content":"According to Different Material Qualities","children":[{"content":"For Different Kinds of Demigods","children":[],"payload":{"lines":"17,18"}},{"content":"Ultimately Offered to the Supreme Personality of Godhead","children":[],"payload":{"lines":"18,19"}}],"payload":{"lines":"16,17"}}],"payload":{"lines":"15,16"}},{"content":"Examples of Yajñas","children":[{"content":"Meat-Eaters","children":[{"content":"Worship of Goddess Kālī","children":[],"payload":{"lines":"21,22"}},{"content":"Sacrifice of Animals","children":[],"payload":{"lines":"22,23"}}],"payload":{"lines":"20,21"}},{"content":"Mode of Goodness","children":[{"content":"Transcendental Worship of Viṣṇu","children":[],"payload":{"lines":"24,25"}}],"payload":{"lines":"23,24"}}],"payload":{"lines":"19,20"}},{"content":"Ultimate Goal","children":[{"content":"Gradual Promotion to the Transcendental Position","children":[],"payload":{"lines":"26,27"}}],"payload":{"lines":"25,26"}}],"payload":{"lines":"10,11"}},{"content":"Human Society","children":[{"content":"Dependence on Demigod Agents","children":[{"content":"Supplies of Necessities of Life","children":[{"content":"Eatables","children":[{"content":"Grains, Fruits, Vegetables, Milk, Sugar, etc.","children":[],"payload":{"lines":"32,33"}}],"payload":{"lines":"31,32"}},{"content":"Non-Vegetarian Eatables","children":[{"content":"Meats, etc.","children":[],"payload":{"lines":"34,35"}}],"payload":{"lines":"33,34"}}],"payload":{"lines":"30,31"}},{"content":"Natural Resources","children":[{"content":"Heat, Light, Water, Air, etc.","children":[],"payload":{"lines":"36,37"}}],"payload":{"lines":"35,36"}}],"payload":{"lines":"29,30"}},{"content":"Purpose of Life","children":[{"content":"Self-Realization","children":[{"content":"Leading to Liberation from Material Struggle for Existence","children":[],"payload":{"lines":"39,40"}}],"payload":{"lines":"38,39"}}],"payload":{"lines":"37,38"}},{"content":"Misuse of Supplies","children":[{"content":"Sense Gratification","children":[{"content":"Entanglement in Material Existence","children":[],"payload":{"lines":"42,43"}},{"content":"Punishment by Laws of Material Nature","children":[],"payload":{"lines":"43,44"}}],"payload":{"lines":"41,42"}}],"payload":{"lines":"40,41"}},{"content":"Aim of Life","children":[{"content":"Performance of Yajñas","children":[{"content":"Attainment of Ultimate Goal","children":[],"payload":{"lines":"46,47"}}],"payload":{"lines":"45,46"}}],"payload":{"lines":"44,45"}}],"payload":{"lines":"28,29"}},{"content":"Lord Caitanya","children":[{"content":"Inauguration of Easiest Performance of Yajña","children":[{"content":"Saṅkīrtana-Yajña","children":[{"content":"Can be Performed by Anyone in the World","children":[],"payload":{"lines":"51,52"}},{"content":"Acceptance of Principles of Kṛṣṇa Consciousness","children":[],"payload":{"lines":"52,53"}}],"payload":{"lines":"50,51"}}],"payload":{"lines":"49,50"}}],"payload":{"lines":"48,49"}}],"payload":{"lines":"9,10"}},null)</script>
+</body>
+</html>

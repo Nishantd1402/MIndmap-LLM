@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Mind Map","children":[{"content":"Kṛṣṇa Consciousness","children":[{"content":"Action in Kṛṣṇa Consciousness","children":[{"content":"Executed in Accord with Examples","children":[{"content":"Previous Bona Fide Devotees","children":[],"payload":{"lines":"13,14"}}],"payload":{"lines":"12,13"}},{"content":"Following Authorized Persons","children":[{"content":"Line of Disciplic Succession","children":[{"content":"Sun-god","children":[],"payload":{"lines":"16,17"}},{"content":"Manu","children":[],"payload":{"lines":"17,18"}},{"content":"Ikṣvāku","children":[],"payload":{"lines":"18,19"}}],"payload":{"lines":"15,16"}}],"payload":{"lines":"14,15"}}],"payload":{"lines":"11,12"}},{"content":"Importance of Following Authorities","children":[{"content":"Avoiding Bewilderment","children":[{"content":"Even Intelligent Men","children":[],"payload":{"lines":"21,22"}}],"payload":{"lines":"20,21"}},{"content":"Direct Instruction of the Lord","children":[{"content":"To Arjuna","children":[],"payload":{"lines":"23,24"}},{"content":"Following in Footsteps of Arjuna","children":[],"payload":{"lines":"24,25"}}],"payload":{"lines":"22,23"}}],"payload":{"lines":"19,20"}},{"content":"Principles of Religion","children":[{"content":"Laid Down by the Lord","children":[{"content":"Dharmaṁ hi sākṣāt-bhagavat-praṇītam","children":[],"payload":{"lines":"27,28"}}],"payload":{"lines":"26,27"}},{"content":"Not by Imperfect Speculation","children":[{"content":"No Manufacturing Religious Principles","children":[],"payload":{"lines":"29,30"}}],"payload":{"lines":"28,29"}}],"payload":{"lines":"25,26"}},{"content":"Following Great Authorities","children":[{"content":"Brahmā","children":[],"payload":{"lines":"31,32"}},{"content":"Śiva","children":[],"payload":{"lines":"32,33"}},{"content":"Nārada","children":[],"payload":{"lines":"33,34"}},{"content":"Manu","children":[],"payload":{"lines":"34,35"}},{"content":"Kumāra","children":[],"payload":{"lines":"35,36"}},{"content":"Kapila","children":[],"payload":{"lines":"36,37"}},{"content":"Prahlāda","children":[],"payload":{"lines":"37,38"}},{"content":"Bhīṣma","children":[],"payload":{"lines":"38,39"}},{"content":"Śukadeva Gosvāmī","children":[],"payload":{"lines":"39,40"}},{"content":"Yamarāja","children":[],"payload":{"lines":"40,41"}},{"content":"Janaka","children":[],"payload":{"lines":"41,42"}}],"payload":{"lines":"30,31"}},{"content":"Causeless Mercy of the Lord","children":[{"content":"Direct Explanation to Arjuna","children":[{"content":"Action and Inaction","children":[],"payload":{"lines":"44,45"}}],"payload":{"lines":"43,44"}}],"payload":{"lines":"42,43"}},{"content":"Deliverance from Material Existence","children":[{"content":"Action Performed in Kṛṣṇa Consciousness","children":[],"payload":{"lines":"46,47"}}],"payload":{"lines":"45,46"}}],"payload":{"lines":"10,11"}}],"payload":{"lines":"9,10"}},null)</script>
+</body>
+</html>
