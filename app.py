@@ -1,5 +1,8 @@
 import subprocess
 
+command = 'pip install requiremnts.txt'
+subprocess.run(command , shell = True)
+
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -162,7 +165,7 @@ if chapter:
                     create_markdown_file(pre_written_text, output, file_name)
 
                     # Convert markdown to HTML using markmap
-                    command = f'npm install npx \n npx markmap-cli {file_name} --no-open -o {html_file}'
+                    command = f'npx markmap-cli {file_name} --no-open -o {html_file}'
                     subprocess.run(command, shell=True)
 
                     # Read the generated HTML file
