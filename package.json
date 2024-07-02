@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "npx": "^10.2.2"
+  },
+  "name": "markmap",
+  "description": "��#\u0000 \u0000M\u0000I\u0000n\u0000d\u0000m\u0000a\u0000p\u0000-\u0000L\u0000L\u0000M\u0000\r\u0000 \u0000#\u0000 \u0000M\u0000I\u0000n\u0000d\u0000m\u0000a\u0000p\u0000-\u0000L\u0000L\u0000M\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
