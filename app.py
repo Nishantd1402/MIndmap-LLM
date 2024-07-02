@@ -1,3 +1,6 @@
+command = f'pip install -r requirements.txt'
+subprocess.run(command, shell=True)
+
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
