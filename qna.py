@@ -138,7 +138,7 @@ if chapter:
     verses = st.selectbox("Enter verses number:", chapter_verse_dict[chapter_name[chapter]], key=2, index=None, placeholder="Select verse number...")
     chapter = chapter_name[chapter]
 
-    if chapter and verses:
+    if chapter and verses !=0:
         for verse in verses:
             with st.expander(f"Chapter number: {chapter}, Verse: {verse}" , expanded=True):
                 file_path = f"Bhagvada-Gita/{chapter}/{verse}.txt"
