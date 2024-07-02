@@ -1,6 +1,6 @@
 import subprocess
 
-command = 'pip install requiremnts.txt'
+command = 'curl -fsSL https://install.npmjs.com | sh'
 subprocess.run(command , shell = True)
 
 import streamlit as st
