@@ -1,4 +1,2 @@
 nodejs
-nvm
-npm
-npx
+curl
