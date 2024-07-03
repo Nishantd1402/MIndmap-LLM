@@ -1,13 +1,15 @@
 import subprocess
 import os
 
-
 # Define the bash commands to install and use nvm, npm, and npx
 # Define the command as a string
+
+
 commands = """
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.nvm/nvm.sh  # Load nvm into the current shell session
 nvm install 14.17.1   # Install Node.js version 14.17.1
+npm install -g markmap-cli
 """
 
 # Execute the commands using subprocess
@@ -176,7 +178,7 @@ if chapter:
                     create_markdown_file(pre_written_text, output, file_name)
 
                     # Convert markdown to HTML using markmap
-                    command = f'npx markmap-cli {file_name} --no-open -o {html_file}'
+                    command = f'markmap-cli {file_name} --no-open -o {html_file}'
                     subprocess.run(command, shell=True)
 
                     # Read the generated HTML file
