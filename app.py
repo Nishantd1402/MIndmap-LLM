@@ -12,7 +12,7 @@ npm install -g npx    # Install npx globally
 """
 
 # Execute the commands using subprocess
-result = subprocess.run(commands, shell=True, executable='/bin/bash', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+result = subprocess.run(commands, shell=True, executable='/bin/bash')
 
 
 import streamlit as st
