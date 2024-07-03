@@ -1,6 +1,6 @@
 import streamlit as st
 from groq import Groq
-
+import os
 # Initialize the Groq client
 client = Groq(api_key="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")
 
