@@ -159,16 +159,13 @@ if chapter:
                         model="llama3-70b-8192",
                         temperature=0.1
                     )
-<<<<<<< HEAD
                     output = chat_completion.choices[0].message.content
 
                     # Display output
                     st.markdown(output)
-=======
 
                     if input_text:
                         output = chat_completion.choices[0].message.content
 
                         # Display output
                         st.markdown(output)
->>>>>>> 897365b4a2afa5939e93fe10db2fc972bcb3a5f5
