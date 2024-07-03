@@ -1,17 +1,21 @@
 import subprocess
 
-subprocess.run('curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash', shell=True)
+os.environ['NVM_DIR'] = os.path.expanduser("~/.nvm")
 
-# Source nvm script to add it to the current session
-subprocess.run('source ~/.nvm/nvm.sh', shell=True)
+# Run the necessary commands in a bash shell
+commands = """
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install node
+"""
 
-# Install Node.js using nvm
-subprocess.run('nvm install node', shell=True)
+subprocess.run(f'bash -c "{commands}"', shell=True)
 
 # Verify installation
-node_version = subprocess.run('node -v', shell=True, capture_output=True, text=True)
-npm_version = subprocess.run('npm -v', shell=True, capture_output=True, text=True)
-npx_version = subprocess.run('npx -v', shell=True, capture_output=True, text=True)
+node_version = subprocess.run('bash -c "node -v"', shell=True, capture_output=True, text=True)
+npm_version = subprocess.run('bash -c "npm -v"', shell=True, capture_output=True, text=True)
+npx_version = subprocess.run('bash -c "npx -v"', shell=True, capture_output=True, text=True)
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
