@@ -179,7 +179,7 @@ if chapter:
 
                     # Convert markdown to HTML using markmap
                     command = f'markmap-cli {file_name} -o {html_file}'
-                    subprocess.run(command, shell=True)
+                    subprocess.run(command, shell=True , executable='/bin/bash')
 
                     # Read the generated HTML file
                     with open(html_file, "r", encoding="utf-8") as file:
