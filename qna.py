@@ -4,6 +4,21 @@ from groq import Groq
 # Initialize the Groq client
 client = Groq(api_key="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")
 
+def save_qa_to_file(chapter, verse, qa_text):
+    # Create a folder named 'QnA' if it doesn't exist
+    folder_path = 'QnA'
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    
+    # Generate file name
+    file_name = f'QNA_{chapter}_{verse}.txt'
+    file_path = os.path.join(folder_path, file_name)
+    
+    # Save Q&A text to file
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(qa_text)
+
+
 
 chapter_name = {
     '1 - Observing the Armies on the Battlefield of Kurukṣetra': 1,
@@ -166,6 +181,6 @@ if chapter:
 
                     if input_text:
                         output = chat_completion.choices[0].message.content
-
+                        save_qa_to_file(chapter,verse , output)
                         # Display output
                         st.markdown(output)
