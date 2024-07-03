@@ -1,22 +1,28 @@
 import subprocess
 import os
 
+# Set the environment variable for NVM
 os.environ['NVM_DIR'] = os.path.expanduser("~/.nvm")
 
-# Run the necessary commands in a bash shell
+# Define the bash commands to install and use nvm
 commands = """
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install node
+node -v
+npm -v
+npx -v
 """
 
-subprocess.run(f'bash -c "{commands}"', shell=True)
+# Run the commands in a bash shell and capture the output
+process = subprocess.run(['bash', '-c', commands], capture_output=True, text=True)
 
-# Verify installation
-node_version = subprocess.run('bash -c "node -v"', shell=True, capture_output=True, text=True)
-npm_version = subprocess.run('bash -c "npm -v"', shell=True, capture_output=True, text=True)
-npx_version = subprocess.run('bash -c "npx -v"', shell=True, capture_output=True, text=True)
+# Extract the output
+output = process.stdout.strip().split('\n')
+node_version = output[-3] if len(output) > 2 else "Node.js not installed"
+npm_version = output[-2] if len(output) > 1 else "npm not installed"
+npx_version = output[-1] if len(output) > 0 else "npx not installed"
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
