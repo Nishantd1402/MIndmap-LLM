@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 os.environ['NVM_DIR'] = os.path.expanduser("~/.nvm")
 
@@ -21,7 +22,7 @@ import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.llms import Ollama
-import os
+
 
 import streamlit.components.v1 as components
 
