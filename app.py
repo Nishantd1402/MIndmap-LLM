@@ -10,7 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install node
-npm install npx
+npm install -g npx
 node -v
 npm -v
 npx -v
@@ -21,9 +21,9 @@ process = subprocess.run(['bash', '-c', commands], capture_output=True, text=Tru
 
 # Extract the output
 output = process.stdout.strip().split('\n')
-node_version = output[-3] if len(output) > 2 else "Node.js not installed"
-npm_version = output[-2] if len(output) > 1 else "npm not installed"
-npx_version = output[-1] if len(output) > 0 else "npx not installed"
+node_version = output[-4] if len(output) > 3 else "Node.js not installed"
+npm_version = output[-3] if len(output) > 2 else "npm not installed"
+npx_version = output[-2] if len(output) > 1 else "npx not installed"
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
