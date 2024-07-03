@@ -4,15 +4,15 @@ import os
 
 # Define the bash commands to install and use nvm, npm, and npx
 # Define the command as a string
-command = """
+commands = """
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.nvm/nvm.sh  # Load nvm into the current shell session
 nvm install 14.17.1   # Install Node.js version 14.17.1
 npm install -g npx    # Install npx globally
 """
 
-# Run the command using subprocess
-result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+# Execute the commands using subprocess
+result = subprocess.run(commands, shell=True, executable='/bin/bash', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
 import streamlit as st
