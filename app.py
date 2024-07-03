@@ -178,7 +178,7 @@ if chapter:
                     create_markdown_file(pre_written_text, output, file_name)
 
                     # Convert markdown to HTML using markmap
-                    command = f'markmap-cli {file_name} --no-open -o {html_file}'
+                    command = f'markmap-cli {file_name} -o {html_file}'
                     subprocess.run(command, shell=True)
 
                     # Read the generated HTML file
