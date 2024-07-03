@@ -1,2 +1,4 @@
-npm@10.2.4
-npx@10.2.2
+nvm
+node
+npm
+npx
