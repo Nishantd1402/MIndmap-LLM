@@ -1,7 +1,17 @@
 import subprocess
 
-command = 'curl -fsSL https://install.npmjs.com | sh'
-subprocess.run(command , shell = True)
+subprocess.run('curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash', shell=True)
+
+# Source nvm script to add it to the current session
+subprocess.run('source ~/.nvm/nvm.sh', shell=True)
+
+# Install Node.js using nvm
+subprocess.run('nvm install node', shell=True)
+
+# Verify installation
+node_version = subprocess.run('node -v', shell=True, capture_output=True, text=True)
+npm_version = subprocess.run('npm -v', shell=True, capture_output=True, text=True)
+npx_version = subprocess.run('npx -v', shell=True, capture_output=True, text=True)
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
