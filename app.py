@@ -3,7 +3,7 @@ import os
 
 
 # Define the bash commands to install and use nvm, npm, and npx
-commands = """
+command = """
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 npm install -g npx
 """
