@@ -4,26 +4,43 @@ import os
 # Set the environment variable for NVM
 os.environ['NVM_DIR'] = os.path.expanduser("~/.nvm")
 
-# Define the bash commands to install and use nvm
+import os
+import subprocess
+
+# Set the environment variable for NVM
+os.environ['NVM_DIR'] = os.path.expanduser("~/.nvm")
+
+# Define the bash commands to install and use nvm, npm, and npx
 commands = """
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install node
 npm install -g npx
-node -v
-npm -v
-npx -v
 """
 
-# Run the commands in a bash shell and capture the output
-process = subprocess.run(['bash', '-c', commands], capture_output=True, text=True)
+# Function to run bash commands and capture output
+def run_bash_commands(commands):
+    try:
+        process = subprocess.run(['bash', '-c', commands], capture_output=True, text=True, check=True)
+        return process.stdout.strip().split('\n')
+    except subprocess.CalledProcessError as e:
+        print(f"Error running bash commands: {e}")
+        return None
 
-# Extract the output
-output = process.stdout.strip().split('\n')
-node_version = output[-4] if len(output) > 3 else "Node.js not installed"
-npm_version = output[-3] if len(output) > 2 else "npm not installed"
-npx_version = output[-2] if len(output) > 1 else "npx not installed"
+# Check and install Node.js, npm, and npx
+output = run_bash_commands(commands)
+if output:
+    node_version = next((line for line in output if line.startswith('v')), "Node.js not installed")
+    npm_version = "npm not installed"  # npm version can be checked similarly if needed
+    npx_version = "npx not installed"
+    
+    # Check npx version specifically
+    try:
+        npx_process = subprocess.run(['npx', '-v'], capture_output=True, text=True, check=True)
+        npx_version = npx_process.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        print(f"Error running npx: {e}")
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
