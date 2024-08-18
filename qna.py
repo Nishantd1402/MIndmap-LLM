@@ -23,8 +23,7 @@ def save_qa_to_file(chapter, verse, qa_text):
 
 
 # Define the system prompt
-system_prompt = """
-x Generating Multiple Types of Questions and Answers from a Given Text
+system_prompt = """ You will be a given a text input. Analyze the input and help the user by - Generating Multiple Types of Questions and Answers covering essential concepts form the give input.
 
 1. Read the Text:
    - Carefully read the provided text, noting key themes, concepts, significant terms, or phrases. Understand the context and the message conveyed by the text.
