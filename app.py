@@ -5,15 +5,6 @@ import os
 # Define the command as a string
 
 
-commands = """
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-source ~/.nvm/nvm.sh  # Load nvm into the current shell session
-nvm install node   # Install Node.js version 14.17.1
-npm install -g markmap-cli
-"""
-
-# Execute the commands using subprocess
-result = subprocess.run(commands, shell=True, executable='/bin/bash')
 
 
 import streamlit as st
