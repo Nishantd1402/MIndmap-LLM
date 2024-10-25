@@ -167,49 +167,50 @@ if chapter:
     if chapter and verses:
         for verse in verses:
             with st.expander(f"Chapter number: {chapter}, Verse: {verse}" , expanded=True):
-                file_path = f"Bhagvada-Gita/{chapter}/{verse}.txt"
-                input_text = extract_purport(file_path)
-
-                st.write(f"Chapter number: {chapter}, Verse: {verse}")
-
-                # Initialize the Ollama LLM
-                chat_completion = client.chat.completions.create(
-                    messages=[
-                        {
-                            "role": "system",
-                            "content": f"{system_prompt}"
-                        },
-                        {
-                            "role": "user",
-                            "content": f"{input_text}",
-                        }
-                    ],
-                    model="llama3-70b-8192",
-                    temperature=0.01
-                )
-
-                if input_text:
-                    output = chat_completion.choices[0].message.content
-
-                    # Generate file names
-                    file_name = f"mark_{chapter}_{verse}.md"
-                    html_file = f"{html_folder}/mark_{chapter}_{verse}.html"  # Store in the html_folder
-
-                    # Create markdown file
-                    create_markdown_file(pre_written_text, output, file_name)
-
-                    # Convert markdown to HTML using markmap
-                    command = f'npx markmap-cli {file_name} -o {html_file}'
-                    subprocess.run(command, shell=True , executable='/bin/bash')
-
-                    # Read the generated HTML file
-                    with open(html_file, "r", encoding="utf-8") as file:
-                        html_content = file.read()
-
-                    # Embed the HTML content in Streamlit
-                    components.html(html_content , height=400)
-                    st.write(input_text)
-
+                with st.spinner("Generating"):
+                    file_path = f"Bhagvada-Gita/{chapter}/{verse}.txt"
+                    input_text = extract_purport(file_path)
+    
+                    st.write(f"Chapter number: {chapter}, Verse: {verse}")
+    
+                    # Initialize the Ollama LLM
+                    chat_completion = client.chat.completions.create(
+                        messages=[
+                            {
+                                "role": "system",
+                                "content": f"{system_prompt}"
+                            },
+                            {
+                                "role": "user",
+                                "content": f"{input_text}",
+                            }
+                        ],
+                        model="llama3-70b-8192",
+                        temperature=0.01
+                    )
+    
+                    if input_text:
+                        output = chat_completion.choices[0].message.content
+    
+                        # Generate file names
+                        file_name = f"mark_{chapter}_{verse}.md"
+                        html_file = f"{html_folder}/mark_{chapter}_{verse}.html"  # Store in the html_folder
+    
+                        # Create markdown file
+                        create_markdown_file(pre_written_text, output, file_name)
+    
+                        # Convert markdown to HTML using markmap
+                        command = f'npx markmap-cli {file_name} -o {html_file}'
+                        subprocess.run(command, shell=True , executable='/bin/bash')
+    
+                        # Read the generated HTML file
+                        with open(html_file, "r", encoding="utf-8") as file:
+                            html_content = file.read()
+    
+                        # Embed the HTML content in Streamlit
+                        components.html(html_content , height=400)
+                        st.write(input_text)
+    
+                
             
-        
             
