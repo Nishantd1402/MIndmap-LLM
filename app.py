@@ -28,7 +28,7 @@ def is_markmap_installed():
 # Function to install Markmap CLI using npm
 def install_markmap():
     st.session_state.installation_status = "Installing Markmap CLI..."
-    install_command = "npm install -g markmap-cli"
+    install_command = "npm install npx"
     process = subprocess.run(install_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     
     if process.returncode == 0:
@@ -199,7 +199,7 @@ if chapter:
                     create_markdown_file(pre_written_text, output, file_name)
 
                     # Convert markdown to HTML using markmap
-                    command = f'markmap-cli {file_name} -o {html_file}'
+                    command = f'npx markmap-cli {file_name} -o {html_file}'
                     subprocess.run(command, shell=True , executable='/bin/bash')
 
                     # Read the generated HTML file
