@@ -1,11 +1,6 @@
 import subprocess
 import os
 
-# Define the bash commands to install and use nvm, npm, and npx
-# Define the command as a string
-
-
-
 
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,6 +12,41 @@ import streamlit.components.v1 as components
 
 import os
 from groq import Groq
+
+
+
+
+# Initialize installation status
+if 'installation_status' not in st.session_state:
+    st.session_state.installation_status = "Not checked"
+
+# Function to check if Markmap CLI is already installed
+def is_markmap_installed():
+    result = subprocess.run("command -v markmap", shell=True, stdout=subprocess.PIPE)
+    return result.stdout.strip() != b''
+
+# Function to install Markmap CLI using npm
+def install_markmap():
+    st.session_state.installation_status = "Installing Markmap CLI..."
+    install_command = "npm install -g markmap-cli"
+    process = subprocess.run(install_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    
+    if process.returncode == 0:
+        st.session_state.installation_status = "Markmap CLI installed successfully."
+    else:
+        st.session_state.installation_status = f"Failed to install Markmap CLI: {process.stderr.decode()}"
+
+# Check installation status on app start
+if st.session_state.installation_status == "Not checked":
+    if is_markmap_installed():
+        st.session_state.installation_status = "Markmap CLI is already installed."
+    else:
+        install_markmap()
+
+
+
+
+
 
 client = Groq(
     api_key="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"
